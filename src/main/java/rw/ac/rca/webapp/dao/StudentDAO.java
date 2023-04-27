@@ -7,10 +7,10 @@ import rw.ac.rca.webapp.orm.Student;
 import java.util.List;
 
 public interface StudentDAO {
-    public Student saveCourse(Student student);
-    public Student updateCourse(Student student);
-    public Student saveOrUpdateCourse(Student student);
-    public boolean deleteCourse(Student student);
-    public Student getCourseById(int studentId);
-    public List<Student> getAllCourses();
+    public Student saveStudent(Student student);
+    public Student updateStudent(Student student);
+    public Student saveOrUpdateStudent(Student student);
+    public boolean deleteStudent(Student student);
+    public Student getStudentById(int studentId);
+    public List<Student> getAllStudent();
 }
