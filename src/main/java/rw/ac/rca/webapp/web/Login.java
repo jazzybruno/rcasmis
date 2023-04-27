@@ -80,7 +80,8 @@ public class Login extends HttpServlet {
 		} else {
 
 			try {
-				User authenticatedUser = userDAO.getUserByDetails(username, username, Util.generateHashed512(password));
+				password = Util.generateHashed512(password);
+				User authenticatedUser = userDAO.getUserByDetails(username, username, password);
 				System.out.println(authenticatedUser);
 				if (authenticatedUser != null) {
 					System.out.println(authenticatedUser.getFullName());
