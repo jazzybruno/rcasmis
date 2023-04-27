@@ -7,10 +7,10 @@ import rw.ac.rca.webapp.orm.Marks;
 import java.util.List;
 
 public interface InstructorDAO {
-    public Instructor saveCourse(Instructor instructor);
-    public Instructor updateCourse(Instructor instructor);
-    public Instructor saveOrUpdateCourse(Instructor instructor);
-    public boolean deleteCourse(Instructor instructor);
-    public Instructor getCourseById(int instructorId);
-    public List<Instructor> getAllCourses();
+    public Instructor saveInstructor(Instructor instructor);
+    public Instructor updateInstructor(Instructor instructor);
+    public Instructor saveOrUpdateInstructor(Instructor instructor);
+    public boolean deleteInstructor(Instructor instructor);
+    public Instructor getInstructorById(int instructorId);
+    public List<Instructor> getAllInstructor();
 }
