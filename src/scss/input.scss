@@ -1,0 +1,36 @@
+body{
+  .error{
+    color: red;
+    text-decoration: underline;
+    background-color: aqua;
+    background-attachment: fixed;
+  }
+
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: aqua;
+
+  &:hover {
+    background-color: #ddd;
+  }
+
+  h2 {
+    color: #333;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  p {
+    color: #666;
+    font-size: 16px;
+    text-align: justify;
+    margin: 10px;
+  }
+}
