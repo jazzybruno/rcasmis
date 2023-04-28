@@ -1,10 +1,8 @@
 package rw.ac.rca.webapp.dao.impl;
 
-import jdk.vm.ci.code.site.Mark;
 import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import rw.ac.rca.webapp.dao.MarksDAO;
-import rw.ac.rca.webapp.orm.Course;
 import rw.ac.rca.webapp.orm.Marks;
 
 import java.util.List;

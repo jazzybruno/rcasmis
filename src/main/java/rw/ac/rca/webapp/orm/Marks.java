@@ -18,12 +18,10 @@ public class Marks {
     @Column
     @NotNull
     private char gradeGotten;
-    @Column
     @NotNull
     @ManyToOne
     @JoinColumn(name = "courseId")
     private Course course;
-    @Column
     @NotNull
     @ManyToOne
     @JoinColumn(name = "studentId")
