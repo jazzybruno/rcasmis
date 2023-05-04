@@ -17,7 +17,7 @@ public class CourseDAOImpl extends DAO implements CourseDAO {
 
 	private static CourseDAOImpl instance;
 
-	private CourseDAOImpl() {
+	CourseDAOImpl() {
 	}
 
 	public static CourseDAOImpl getInstance() {
