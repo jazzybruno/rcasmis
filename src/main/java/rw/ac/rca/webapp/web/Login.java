@@ -39,7 +39,7 @@ public class Login extends HttpServlet {
 			throws ServletException, IOException {
 		if (request.getParameter("logout") != null) {
 			request.getSession().invalidate();
-			request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/Forms/login/login.jsp").forward(request, response);
 		} else {
 			String username = request.getParameter("username");
 			System.out.println("Session ID in welcome page >>>>>>>>: " + request.getSession().getId()
