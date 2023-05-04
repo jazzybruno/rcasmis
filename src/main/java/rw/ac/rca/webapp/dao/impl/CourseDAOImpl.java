@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package rw.ac.rca.webapp.dao.impl;
 
@@ -15,98 +15,98 @@ import rw.ac.rca.webapp.orm.Course;
  */
 public class CourseDAOImpl extends DAO implements CourseDAO {
 
-	private static CourseDAOImpl instance;
+    private static CourseDAOImpl instance;
 
-	CourseDAOImpl() {
-	}
+    CourseDAOImpl() {
+    }
 
-	public static CourseDAOImpl getInstance() {
-		if (instance == null) {
-			return new CourseDAOImpl();
-		} else {
-			return instance;
-		}
-	}
-	
-	public Course saveCourse(Course course) {
-		try {
-			begin();
-			getSession().save(course);
-			commit();
-			return course;
-		} catch (Exception e) {
-			rollback();
-			return null;
-		}
-	}
+    public static CourseDAOImpl getInstance() {
+        if (instance == null) {
+            return new CourseDAOImpl();
+        } else {
+            return instance;
+        }
+    }
 
-	public Course updateCourse(Course course) {
-		try {
-			begin();
-			getSession().update(course);
-			commit();
-			return course;
-		} catch (Exception e) {
-			rollback();
-			return null;
-		}
-	}
+    public Course saveCourse(Course course) {
+        try {
+            begin();
+            getSession().save(course);
+            commit();
+            return course;
+        } catch (Exception e) {
+            rollback();
+            return null;
+        }
+    }
 
-	public Course saveOrUpdateCourse(Course course) {
-		try {
-			begin();
-			getSession().saveOrUpdate(course);
-			commit();
-			return course;
-		} catch (Exception e) {
-			rollback();
-			return null;
-		}
-	}
+    public Course updateCourse(Course course) {
+        try {
+            begin();
+            getSession().update(course);
+            commit();
+            return course;
+        } catch (Exception e) {
+            rollback();
+            return null;
+        }
+    }
 
-	public boolean deleteCourse(Course course) {
-		try {
-			begin();
-			Query query = getSession().createQuery(
-					"from Course where id= :ref");
-			query.setInteger("ref", course.getId());
-			Course crs = (Course) query.uniqueResult();
-			getSession().delete(crs);
-			commit();
-			return true;
+    public Course saveOrUpdateCourse(Course course) {
+        try {
+            begin();
+            getSession().saveOrUpdate(course);
+            commit();
+            return course;
+        } catch (Exception e) {
+            rollback();
+            return null;
+        }
+    }
 
-		} catch (Exception e) {
-			rollback();
-			return false;
-		}
-	}
+    public boolean deleteCourse(Course course) {
+        try {
+            begin();
+            Query query = getSession().createQuery(
+                    "from Course where id= :ref");
+            query.setInteger("ref", course.getId());
+            Course crs = (Course) query.uniqueResult();
+            getSession().delete(crs);
+            commit();
+            return true;
 
-	public Course getCourseById(int courseId) {
-		try {
-			begin();
-			Query query = getSession().createQuery(
-					"from Course where id= :ref");
-			query.setInteger("ref", courseId);
-			Course course = (Course) query.uniqueResult();
-			commit();
-			return course;
-		} catch (Exception e) {
-			rollback();
-			return null;
-		}
-	}
+        } catch (Exception e) {
+            rollback();
+            return false;
+        }
+    }
 
-	@SuppressWarnings("unchecked")
-	public List<Course> getAllCourses() {
-		try {
-			begin();
-			Query query = getSession().createQuery("from Course");
-			List<Course> courses = query.list();
-			commit();
-			return courses;
-		} catch (Exception e) {
-			rollback();
-			return null;
-		}
-	}
+    public Course getCourseById(int courseId) {
+        try {
+            begin();
+            Query query = getSession().createQuery(
+                    "from Course where id= :ref");
+            query.setInteger("ref", courseId);
+            Course course = (Course) query.uniqueResult();
+            commit();
+            return course;
+        } catch (Exception e) {
+            rollback();
+            return null;
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<Course> getAllCourses() {
+        try {
+            begin();
+            Query query = getSession().createQuery("from Course");
+            List<Course> courses = query.list();
+            commit();
+            return courses;
+        } catch (Exception e) {
+            rollback();
+            return null;
+        }
+    }
 }
