@@ -69,7 +69,7 @@
         <c:if test="${authenticatedUser !=null}">
             <div class="options">
 
-                <a href="createstudents.php?page=createstudent">
+                <a href="createstudent.php?page=createstudent">
                     <button>
                         <img src="icons/add.png"/> New Student Registration
                     </button>
@@ -102,10 +102,7 @@
                         <td>Last Name</td>
                         <td>Phone Number</td>
                         <td>Date Of Birth</td>
-                        <td>isInternational</td>
-                        <td>isPartTime</td>
-                        <td>isRepeating</td>
-                        <td>Address id</td>
+                        <td>Address</td>
                     </tr>
                     </thead>
                     <tbody>
@@ -114,12 +111,9 @@
                             <td>${csr.id}</td>
                             <td>${csr.firstName}</td>
                             <td>${csr.lastName}</td>
-                            <td>${csr.phoneNumber   }</td>
+                            <td>${csr.phoneNumber}</td>
                             <td>${csr.dateOfBirth}</td>
-                            <td>${csr.isInternational}</td>
-                            <td>${csr.isPartTime}</td>
-                            <td>${csr.isRepeating}</td>
-                            <td>${csr.address_id}</td>
+                            <td>${csr.address.getCity()}</td>
                             <td><input type="checkbox" name="usrIds"
                                        value="${usr.id}"/></td>
                         </tr>

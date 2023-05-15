@@ -7,6 +7,7 @@ import rw.ac.rca.webapp.dao.impl.CourseDAOImpl;
 import rw.ac.rca.webapp.dao.impl.MarksDAOImpl;
 import rw.ac.rca.webapp.dao.impl.StudentDAOImpl;
 import rw.ac.rca.webapp.orm.Course;
+import rw.ac.rca.webapp.orm.Marks;
 import rw.ac.rca.webapp.orm.Student;
 
 import javax.servlet.ServletException;
@@ -31,7 +32,7 @@ public class CreateMarks extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CreateMarks() {
+    public CreateMarks() { 
         super();
         // TODO Auto-generated constructor stub
     }
@@ -74,30 +75,27 @@ public class CreateMarks extends HttpServlet {
 
         if(pageRedirect != null){
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-            if(pageRedirect.equals("createcourse")){
-                Course course = null;
-                try {
-                    course = new Course(
-                            request.getParameter("name"),
-                            request.getParameter("code"),
-                             Integer.parseInt(request.getParameter("min")),
-                             Integer.parseInt(request.getParameter("max")),
-                             simpleDateFormat.parse(request.getParameter("start")),
-                             simpleDateFormat.parse(request.getParameter("end")),
-                            false
+            if(pageRedirect.equals("createmarks")){
+                Course course = (Course) courseDAO.getCourseById(Integer.parseInt(request.getParameter("course")));
+                Student student = studentDAO.getStudentById(Integer.parseInt(request.getParameter("student")));
+
+                Marks marks = new Marks(
+                            Integer.parseInt(request.getParameter("total")),
+                            Integer.parseInt(request.getParameter("marks")),
+                            (request.getParameter("grade")),
+                            course,
+                            student
                     );
-                } catch (ParseException e) {
-                    throw new RuntimeException(e);
-                }
+
 
                 // Saving the course;
                  try {
-                    courseDAO.saveCourse(course);
-                     request.setAttribute("success" , "Successfully created the Course" );
-                     request.getRequestDispatcher("WEB-INF/createCourse.jsp").forward(request , response);
+                    marksDAO.saveMarks(marks);
+                     request.setAttribute("success" , "Successfully created the Marks" );
+                     request.getRequestDispatcher("WEB-INF/createMarks.jsp").forward(request , response);
                  }catch (Exception e){
-                     request.setAttribute("CreateCourseerror" , "Failed to create the Course" );
-                     request.getRequestDispatcher("WEB-INF/createCourse.jsp").forward(request , response);
+                     request.setAttribute("CreateCourseerror" , "Failed to create the Marks" );
+                     request.getRequestDispatcher("WEB-INF/createMarks.jsp").forward(request , response);
                  }
             }else{
                 request.getRequestDispatcher("WEB-INF/login.jsp").forward(request , response);

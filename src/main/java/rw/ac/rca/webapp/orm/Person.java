@@ -21,7 +21,7 @@ public abstract class Person implements Serializable{
 	
 	private static final long serialVersionUID = 2173199134252447177L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	int id;
 	private String firstName;
 	private String lastName;
@@ -38,7 +38,7 @@ public abstract class Person implements Serializable{
 	
 	@Column(nullable = false)
 	public String getFirstName() {
-		return firstName;
+		return  firstName + " " + lastName;
 	}
 
 	public void setFirstName(String firstName) {

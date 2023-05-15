@@ -28,9 +28,9 @@ public class MarksDAOImpl extends DAO implements MarksDAO {
     public Marks saveMarks(Marks marks) {
         try {
             begin();
-            Marks marks1 = (Marks) getSession().save(marks);
+            getSession().save(marks);
             commit();
-            return marks1;
+            return marks;
         }catch (Exception e){
             rollback();
             return null;
@@ -91,11 +91,13 @@ public class MarksDAOImpl extends DAO implements MarksDAO {
         }
     }
 
-    @Override
+    @SuppressWarnings(
+            "unchecked"
+    )
     public List<Marks> getAllMarks() {
         try {
             begin();
-            Query query = getSession().createQuery("FROM marks");
+            Query query = getSession().createQuery("FROM Marks");
             List<Marks> marks = query.list();
             commit();
             return marks;

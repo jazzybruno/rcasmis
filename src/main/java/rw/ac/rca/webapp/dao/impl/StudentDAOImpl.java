@@ -79,7 +79,7 @@ public class StudentDAOImpl extends DAO implements StudentDAO {
     public Student getStudentById(int studentId) {
         try {
             begin();
-            Query query = getSession().createQuery("FROM student WHERE id=ref");
+            Query query = getSession().createQuery("from Student where id= :ref");
             query.setInteger("ref" , studentId);
             Student student = (Student) query.uniqueResult();
             commit();
@@ -90,11 +90,11 @@ public class StudentDAOImpl extends DAO implements StudentDAO {
         }
     }
 
-    @Override
+    @SuppressWarnings("unchecked")
     public List<Student> getAllStudent() {
         try {
             begin();
-            Query query = getSession().createQuery("FROM student");
+            Query query = getSession().createQuery("FROM Student");
             List<Student> students = query.list();
             commit();
             return students;

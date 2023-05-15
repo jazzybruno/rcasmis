@@ -108,8 +108,8 @@
                 <td>${csr.gradeGotten}</td>
                 <td>${csr.marksScored}</td>
                 <td>${csr.totalMarks}</td>
-                <td>${csr.courseId}</td>
-                <td>${csr.studentId}</td>
+                <td>${csr.course.getName()}</td>
+                <td>${csr.student.getFirstName()}</td>
                 <td><input type="checkbox" name="usrIds"
                            value="${usr.id}" /></td>
               </tr>

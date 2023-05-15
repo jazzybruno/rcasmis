@@ -8,11 +8,11 @@ import rw.ac.rca.webapp.orm.Address;
 import java.util.List;
 
 public class AddressDAOImpl extends DAO implements AddressDAO {
-    public static CourseDAOImpl instance;
+    public static AddressDAOImpl instance;
 
-    public static CourseDAOImpl getInstance(){
+    public static AddressDAOImpl getInstance(){
         if(instance == null){
-            return new CourseDAOImpl();
+            return new AddressDAOImpl();
         }else {
             return instance;
         }
@@ -74,7 +74,7 @@ public class AddressDAOImpl extends DAO implements AddressDAO {
     public Address getAddressById(int addressId) {
         try {
             begin();
-            Query query = getSession().createQuery("FROM address WHERE id=ref");
+            Query query = getSession().createQuery("from Address where id= :ref");
             query.setInteger("ref" , addressId);
             Address address = (Address) query.uniqueResult();
             commit();
@@ -85,17 +85,18 @@ public class AddressDAOImpl extends DAO implements AddressDAO {
         }
     }
 
-    @Override
+    @SuppressWarnings("unchecked")
     public List<Address> getAllAddresses() {
 
         try {
             begin();
-            Query query = getSession().createQuery("FROM address");
+            Query query = getSession().createQuery("FROM Address");
             List<Address> addresses = query.list();
             commit();
             return addresses;
         }catch (Exception e){
             rollback();
+            e.printStackTrace();
             return null;
         }
     }

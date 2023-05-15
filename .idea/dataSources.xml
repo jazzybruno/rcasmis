@@ -12,5 +12,12 @@ C:/Users/HP/IdeaProjects/rcasmis/src/main/resources/hibernate.cfg.xml</remarks>
       <jdbc-url>jdbc:mysql://localhost:3306/rcawebapp</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="rcawebapp@localhost" uuid="e378238a-43b6-406b-881a-25c3de696c93">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/rcawebapp</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

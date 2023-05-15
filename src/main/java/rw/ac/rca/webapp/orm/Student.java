@@ -42,7 +42,9 @@ public class Student extends Person{
 	@ManyToOne
 	@JoinColumn(name = "address_id")
 	private Address address;
-	
+	public String getAddressName(){
+		return this.address.getCity();
+	}
 	public boolean isInternational() {
 		return isInternational;
 	}
@@ -81,5 +83,6 @@ public class Student extends Person{
 //	String getAllNames() {
 //		return getFirstName()+ " "+ getLastName();
 //	}
-	
+
+
 }

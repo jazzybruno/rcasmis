@@ -17,7 +17,7 @@ public class Marks {
     private int marksScored;
     @Column
     @NotNull
-    private char gradeGotten;
+    private String gradeGotten;
     @NotNull
     @ManyToOne
     @JoinColumn(name = "courseId")
@@ -31,7 +31,7 @@ public class Marks {
 
     }
 
-    public Marks(int totalMarks, int marksScored, char gradeGotten, Course course, Student student) {
+    public Marks(int totalMarks, int marksScored, String gradeGotten, Course course, Student student) {
         this.totalMarks = totalMarks;
         this.marksScored = marksScored;
         this.gradeGotten = gradeGotten;
@@ -63,11 +63,11 @@ public class Marks {
         this.marksScored = marksScored;
     }
 
-    public char getGradeGotten() {
+    public String getGradeGotten() {
         return gradeGotten;
     }
 
-    public void setGradeGotten(char gradeGotten) {
+    public void setGradeGotten(String gradeGotten) {
         this.gradeGotten = gradeGotten;
     }
 

@@ -54,6 +54,12 @@ public class CreateUser extends HttpServlet {
 		String userRole = request.getParameter("userRole");
 		UserRole usrr = UserRole.valueOf(userRole);
 
+		System.out.println(userfullname);
+		System.out.println(usernameauth);
+		System.out.println(email);
+		System.out.println(usrr.getRoleDescription());
+		System.out.println(passwordauth);
+		
 		try {
 			String hashedPsw = Util.generateHashed512(passwordauth);
 

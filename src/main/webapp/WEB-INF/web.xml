@@ -29,6 +29,18 @@
         <url-pattern>/createmarks.php</url-pattern>
     </servlet-mapping>
 
+<!--    create student endpoint-->
+    <servlet>
+        <description></description>
+        <display-name>CreateStudent</display-name>
+        <servlet-name>CreateStudent</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.CreateStudent</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateStudent</servlet-name>
+        <url-pattern>/createstudent.php</url-pattern>
+    </servlet-mapping>
+
     <servlet>
         <description></description>
         <display-name>ListCourse</display-name>
