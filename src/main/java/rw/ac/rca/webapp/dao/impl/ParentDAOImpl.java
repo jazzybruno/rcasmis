@@ -85,11 +85,11 @@ public class ParentDAOImpl extends DAO implements ParentDAO {
         }
     }
 
-    @Override
+    @SuppressWarnings("unchecked")
     public List<Parent> getAllParents() {
         try {
             begin();
-            Query query = getSession().createQuery("FROM parents");
+            Query query = getSession().createQuery("FROM Parent");
             List<Parent> parents =  query.list();
             commit();
             return parents;

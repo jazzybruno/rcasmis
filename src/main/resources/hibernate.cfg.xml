@@ -36,5 +36,6 @@
 		<mapping class="rw.ac.rca.webapp.orm.AcademicYear" />
 		<mapping class="rw.ac.rca.webapp.orm.User" />
 		<mapping class="rw.ac.rca.webapp.orm.Marks" />
+		<mapping class="rw.ac.rca.webapp.orm.Parent" />
 	</session-factory>
 </hibernate-configuration>

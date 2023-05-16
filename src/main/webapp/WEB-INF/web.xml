@@ -43,6 +43,17 @@
 
     <servlet>
         <description></description>
+        <display-name>CreateParent</display-name>
+        <servlet-name>CreateParent</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.CreateParent</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateParent</servlet-name>
+        <url-pattern>/createparent.php</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description></description>
         <display-name>ListCourse</display-name>
         <servlet-name>ListCourse</servlet-name>
         <servlet-class>rw.ac.rca.webapp.web.ListCourse</servlet-class>
@@ -73,6 +84,17 @@
     <servlet-mapping>
         <servlet-name>ListStudent</servlet-name>
         <url-pattern>/liststudents.php</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>ListParents</display-name>
+        <servlet-name>ListParents</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.ListParents</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListParents</servlet-name>
+        <url-pattern>/listparents.php</url-pattern>
     </servlet-mapping>
 
     <servlet>

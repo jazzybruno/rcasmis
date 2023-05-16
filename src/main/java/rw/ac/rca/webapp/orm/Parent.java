@@ -31,6 +31,10 @@ public class Parent  extends Person{
         this.student = student;
     }
 
+    public Parent() {
+
+    }
+
     public String getNationalId() {
         return nationalId;
     }
