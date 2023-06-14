@@ -134,7 +134,7 @@
       <c:forEach items="${students}" var="st">
         varStatus="coursestatus">
         <option value="${st.id}">
-          <c:out value="${st.firstName}"/>
+          <c:out value="${st.firstName} ${st.lastName}"/>
         </option>
       </c:forEach>
     </select>

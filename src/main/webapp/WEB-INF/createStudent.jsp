@@ -121,7 +121,7 @@
           <c:out value="${ad.city}"/>
         </option>
       </c:forEach>
-    </select>
+    </select>'
     <input type="submit" value="Create Student">
   </form>
 

@@ -35,13 +35,15 @@ public class Student extends Person{
 		this.isPartTime = isPartTime;
 		this.isRepeating = isRepeating;
 	}
-	
+
 //	@OneToMany(cascade= CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "student")
 //	private List<Enrol> enrols;
 //
 	@ManyToOne
 	@JoinColumn(name = "address_id")
 	private Address address;
+
+
 	public String getAddressName(){
 		return this.address.getCity();
 	}

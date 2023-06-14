@@ -48,7 +48,7 @@ hr {
 #layout {
 	background-color: white;
 	margin: auto;
-	width: 1000px;
+	width: 100%;
 	height: auto;
 	position: static;
 	margin-top: 0px;
@@ -66,13 +66,12 @@ hr {
 #banner {
 	background: url("images/banner_bg.png") repeat-x scroll left top transparent;
 	height: 90px;
-	width: 1000px;
+	width: 100%;
 	font-style: normal;
 	border: 1px solid #ccc;
 	position: relative;
 }
 .bannerlogo {
-	background: #fff url("images/rcalogo.png") no-repeat;
 	height: 90px;
 	width: 100px;
 	font-style: normal;
@@ -83,7 +82,7 @@ hr {
 }
 
 #bannerlogin {
-	background: #fff url("images/rcalogo.png") no-repeat;
+	background: #fff url("images/rcalogo.jpeg") no-repeat;
 	height: 90px;
 	width: 400px;
 	font-style: normal;
@@ -166,7 +165,7 @@ a:HOVER {
 
 button {
 	height: 20px;
-	color: #428BCA;
+	color: #29375A;
 	cursor: pointer;
 	background: #fff url("images/bg_image_nav.jpg") bottom repeat-x;
 	border: 1px solid #ccc;
@@ -177,33 +176,23 @@ button:HOVER {
 	height: 20px;
 	color: #fff;
 	cursor: pointer;
-	background: #428BCA;
+	background: #29375A;
 	border: 1px solid #ccc;
 	border-style: solid solid solid solid;
 }
 
 .text_header {
-	padding: 1px 0px 0px 35px;
+	padding: 2px 1px 1px 35px;
 	margin-top: 1px;
-	width: 630px;
+	width: 1000px;
 	font-size: 34px;
 	font-weight: bolder;
-	color: #428BCA;
+	color: #29375A;
 	font-variant: small-caps;
 	text-align: right;
 	float: right;
 }
 
-.text_header_login {
-	padding: 1px 0px 0px 35px;
-	margin-top: 1px;
-	width: 360px;
-	font-size: 25px;
-	font-weight: bolder;
-	color: #428BCA;
-	font-variant: small-caps;
-	text-align: right;
-}
 
 .right {
 	padding: 1px 5px 0px 10px;

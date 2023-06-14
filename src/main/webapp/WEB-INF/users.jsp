@@ -11,37 +11,43 @@
 <link rel="stylesheet" href="css/screen.css" type="text/css" />
 <link rel="stylesheet" href="css/site.css" type="text/css" />
 <title>User Registrations</title>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
 	<style>
+		*{
+			font-family: 'Quicksand', sans-serif;
+		}
 		table {
 			font-family: arial, sans-serif;
 			border-collapse: collapse;
 			width: 100%;
+			font-family: 'Quicksand', sans-serif;
 		}
 
 		td, th {
 			border: 1px solid #dddddd;
 			text-align: left;
 			padding: 8px;
+			font-family: 'Quicksand', sans-serif;
 		}
 
-		thead{
-			background-color: #008dd4;
+		thead {
+			background-color: #29375A;
 			color: white;
 			font-family: 'Quicksand', sans-serif;
 			font-weight: bold;
+			font-family: 'Quicksand', sans-serif;
 		}
 	</style>
 </head>
 <body>
-	<div id="layout">
-		<div id="banner">
-			<div class="bannerlogo"></div>
-			<div class="text_header">RCA Management Information System</div>
-			<div class="right" style="text-align: right;">
-				<c:if test="${authenticatedUser !=null}">
+<div id="layout" >
+	<div>
+		<div class="text_header" style="color: #29375A; text-align: center; width: 100%;">RCA Management Information System</div>
+		<div class="right" style="text-align: center; background-color: #29375A; width: 98%;">
+			<c:if test="${authenticatedUser !=null}">
 					<b> <a
 						href="listuser.php?page=profile&&id=${authenticatedUser.id}"><button>Profile
-							</button></a> | <img src="icons/user.png" /> <font color="#ffffff">${authenticatedUser.userRole}:
+							</button></a> | <img src="icons/user_green.png" /> <font color="#ffffff">${authenticatedUser.userRole}:
 							${authenticatedUser.username}</font> | <a href="login.ap?page=logout"><font
 							color="#ffffff">Logout</font></a>
 					</b>

@@ -38,7 +38,7 @@ public abstract class Person implements Serializable{
 	
 	@Column(nullable = false)
 	public String getFirstName() {
-		return  firstName + " " + lastName;
+		return  firstName;
 	}
 
 	public void setFirstName(String firstName) {

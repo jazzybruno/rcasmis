@@ -18,37 +18,43 @@
   <link rel="stylesheet" href="css/screen.css" type="text/css" />
   <link rel="stylesheet" href="css/site.css" type="text/css" />
   <title>Marks Registrations</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
+    *{
+      font-family: 'Quicksand', sans-serif;
+    }
     table {
       font-family: arial, sans-serif;
       border-collapse: collapse;
       width: 100%;
+      font-family: 'Quicksand', sans-serif;
     }
 
     td, th {
       border: 1px solid #dddddd;
       text-align: left;
       padding: 8px;
+      font-family: 'Quicksand', sans-serif;
     }
 
-    thead{
-      background-color: #008dd4;
+    thead {
+      background-color: #29375A;
       color: white;
       font-family: 'Quicksand', sans-serif;
       font-weight: bold;
+      font-family: 'Quicksand', sans-serif;
     }
   </style>
 </head>
 <body>
-<div id="layout">
-  <div id="banner">
-    <div class="bannerlogo"></div>
-    <div class="text_header">RCA Management Information System</div>
-    <div class="right" style="text-align: right;">
+<div id="layout" >
+  <div>
+    <div class="text_header" style="color: #29375A; text-align: center; width: 100%;">RCA Management Information System</div>
+    <div class="right" style="text-align: center; background-color: #29375A; width: 99%; padding:5px">
       <c:if test="${authenticatedUser !=null}">
         <b> <a
                 href="listuser.php?page=profile&&id=${authenticatedUser.id}"><button>Profile
-        </button></a> | <img src="icons/cou.png" /> <font color="#ffffff">${authenticatedUser.userRole}:
+        </button></a> | <img src="icons/user_green.png" /> <font color="#ffffff">${authenticatedUser.userRole}:
             ${authenticatedUser.username}</font> | <a href="login.ap?page=logout"><font
                 color="#ffffff">Logout</font></a>
         </b>
@@ -94,8 +100,8 @@
             <thead>
             <tr>
               <td>ID</td>
-              <td>Marks</td>
               <td>Grade</td>
+              <td>Marks</td>
               <td>Total Marks</td>
               <td>Course</td>
               <td>Student</td>
@@ -109,7 +115,7 @@
                 <td>${csr.marksScored}</td>
                 <td>${csr.totalMarks}</td>
                 <td>${csr.course.getName()}</td>
-                <td>${csr.student.getFirstName()}</td>
+                <td>${csr.student.firstName} ${csr.student.lastName}</td>
                 <td><input type="checkbox" name="usrIds"
                            value="${usr.id}" /></td>
               </tr>

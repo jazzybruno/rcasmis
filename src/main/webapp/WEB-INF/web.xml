@@ -75,6 +75,18 @@
     </servlet-mapping>
 
     <!--  the students endpoint -->
+
+    <servlet>
+        <description></description>
+        <display-name>StudentReport</display-name>
+        <servlet-name>StudentReport</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.StudentReportTxt</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentReport</servlet-name>
+        <url-pattern>/studentsreport.php</url-pattern>
+    </servlet-mapping>
+
     <servlet>
         <description></description>
         <display-name>ListStudent</display-name>

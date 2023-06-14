@@ -9,14 +9,22 @@
 	<link rel="stylesheet" href="cssfile.css" type="text/css" />
 
 	<title>${param.title}</title>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+	<style>
+		*{
+			font-family: 'Quicksand', sans-serif;
+		}
+		div{
+			font-family: 'Quicksand', sans-serif;
+		}
+	</style>
 </head>
 <body>
-	<div id="layout">
-		<div id="banner">
-			<div class="bannerlogo"></div>
-			<div class="text_header">RCA Management Information System</div>
-			<div class="right" style="text-align: right;">
-				<c:if test="${authenticatedUser !=null}">
+<div id="layout" >
+	<div>
+		<div class="text_header" style="color: #29375A; text-align: center; width: 100%;">RCA Management Information System</div>
+		<div class="right" style="text-align: center; background-color: #29375A; width: 99%; padding:5px;">
+			<c:if test="${authenticatedUser !=null}">
 					<b><a href="listuser.php?page=profile&&id=${authenticatedUser.id}"><button>Profile
 						</button></a> | <img src="icons/user.png" /> <font color="#ffffff">${authenticatedUser.fullName}</font>
 						| <a href="login.php?logout=logout"><font color="#ffffff">Logout</font></a>
