@@ -17,7 +17,29 @@
         <servlet-name>CreateCourse</servlet-name>
         <url-pattern>/createcourse.php</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>CourseReport</display-name>
+        <servlet-name>CourseReport</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.CourseResportTxt</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CourseReport</servlet-name>
+        <url-pattern>/coursesreport.php</url-pattern>
+    </servlet-mapping>
     <!--  create marks endpoint-->
+    <servlet>
+        <description></description>
+        <display-name>MarksReport</display-name>
+        <servlet-name>MarksReport</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.MarksReportTxt</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MarksReport</servlet-name>
+        <url-pattern>/marksreport.php</url-pattern>
+    </servlet-mapping>
+
     <servlet>
         <description></description>
         <display-name>CreateMarks</display-name>
@@ -75,6 +97,16 @@
     </servlet-mapping>
 
     <!--  the students endpoint -->
+    <servlet>
+        <description></description>
+        <display-name>StudentReportPdf</display-name>
+        <servlet-name>StudentReportPdf</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.StudentReportPdf</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentReportPdf</servlet-name>
+        <url-pattern>/studentsreportpdf.php</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <description></description>
@@ -129,6 +161,18 @@
         <servlet-name>ListUser</servlet-name>
         <url-pattern>/listuser.php</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>ListEmployee</display-name>
+        <servlet-name>ListEmployee</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.ListEmployee</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListEmployee</servlet-name>
+        <url-pattern>/listemployees.php</url-pattern>
+    </servlet-mapping>
+
     <servlet>
         <description></description>
         <display-name>Login</display-name>

@@ -6,7 +6,6 @@
 		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/rcasmis</property>
 		<property name="hibernate.connection.username">bruno</property>
 		<property name="hibernate.connection.password">Bruno@1980</property>
-
 		<property name="hibernate.session_factory_name">SmisSessionFactory</property>
 		<property name="hibernate.connection.pool_size">1</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>

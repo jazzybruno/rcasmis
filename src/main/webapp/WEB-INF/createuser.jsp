@@ -66,6 +66,8 @@
     <style>
         body {
             background-color: #f2f2f2;
+            padding: 0px;
+            margin: 0px;
         }
 
         .container {
@@ -117,6 +119,7 @@
             color: #333333;
             font-size: 16px;
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+            font-family: 'Quicksand', sans-serif;
         }
 
         input[type="submit"] {
@@ -129,6 +132,7 @@
             font-size: 16px;
             cursor: pointer;
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+            font-family: 'Quicksand', sans-serif;
         }
 
         select {
@@ -147,43 +151,88 @@
             color: #333333;
         }
 
+        .mainDiv{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            background-color: white;
+        }
+
+        .mainDiv-first{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .mainDiv-second{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #29375A;
+            /*background-color: rgba(41, 55, 90, 0.96);*/
+            background-color: white;
+            font-family: 'Quicksand', sans-serif;
+            flex-direction: column;
+            /*background-image: url("https://igihe.com/IMG/arton165281.jpg?1646372784");*/
+            background-repeat: no-repeat;
+        }
+
+        /*.mainDiv-second > p{*/
+        /*    font-size: 22px;*/
+        /*    font-weight: bold;*/
+        /*}*/
+
     </style>
 </head>
 <body>
-<div class="container">
-    <img src="https://media.licdn.com/dms/image/C560BAQEl6a9tUkSKfg/company-logo_200_200/0/1558604414993?e=2147483647&amp;v=beta&amp;t=liCSw94UkEjwbMZZh8N23ZMYixEAMmZNq2IftvsF97Y"
-         alt="LinkedIn Logo">
-    <h2>Sign In</h2>
-    <p>Welcome to RCA SMIS.Please enter your details.</p>
-<c:if test="${CreateUsererror != null}">
-					<p>
-						<span style="color: red"> ${CreateUsererror}</span>
-					</p>
-			</c:if>
-    <c:if test="${success != null}">
-        <p>
-            <span style="color: green"> ${success}</span>
-        </p>
-    </c:if>
-    <form  action="createuser.php?page=createuser" method="post">
-        <input type="text" placeholder="Username" required name="username">
-        <input type="text" placeholder="Email" required name="email">
-        <input type="text" placeholder="Fullname" required name="userfullname">
-        <select name="userRole">
-            <option>Select Role</option>
-            <c:forEach items="${userRoles}" var="userrole">
-                varStatus="userrolestatus">
-                <option value="${userrole}">
-                    <c:out value="${userrole.getRoleDescription()}"/>
-                </option>
-            </c:forEach>
-        </select>
-        <input type="password" placeholder="Password" required name="password">
-        <input type="submit" value="Sign Up">
-        <p>Already have an account <span><a href="login.php?page=login"> Sign in</a>	</span></p>
-    </form>
+ <div class="mainDiv">
+     <div class="mainDiv-second">
+         <h3>Rwanda Coding Academy SMIS</h3>
+         <p>Born To Code</p>
+     </div>
+     <div class="mainDiv-first">
+         <div class="container">
 
-</div>
+             <h2>Sign In</h2>
+             <p>Welcome to RCA SMIS.Please enter your details.</p>
+             <c:if test="${CreateUsererror != null}">
+                 <p>
+                     <span style="color: red"> ${CreateUsererror}</span>
+                 </p>
+             </c:if>
+             <c:if test="${success != null}">
+                 <p>
+                     <span style="color: green"> ${success}</span>
+                 </p>
+             </c:if>
+             <form  action="createuser.php?page=createuser" method="post">
+                 <input type="text" placeholder="Username" required name="username">
+                 <input type="text" placeholder="Email" required name="email">
+                 <input type="text" placeholder="Fullname" required name="userfullname">
+                 <select name="userRole">
+                     <option>Select Role</option>
+                     <c:forEach items="${userRoles}" var="userrole">
+                         varStatus="userrolestatus">
+                         <option value="${userrole}">
+                             <c:out value="${userrole.getRoleDescription()}"/>
+                         </option>
+                     </c:forEach>
+                 </select>
+                 <input type="password" placeholder="Password" required name="password">
+                 <input type="submit" value="Sign Up">
+                 <p>Already have an account <span><a href="login.php?page=login"> Sign in</a>	</span></p>
+             </form>
+
+         </div>
+     </div>
+
+ </div>
 </body>
 </html>
 

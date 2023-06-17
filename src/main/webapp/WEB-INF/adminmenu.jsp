@@ -10,6 +10,13 @@
 
 	</ul></li>
 
+<li><a class="idTabs" href="listemployees.php?page=users&&action=list"><img
+		src="icons/application_side_expand.png" /> Employees</a>
+</li>
+
+
+
+
 
 <li><a class="idTabs" href="#students"><img
 		src="icons/application_side_expand.png" /> Students</a>
@@ -39,16 +46,14 @@
 			href="studentsreport.php?page=studenttxt"><img
 				src="icons/application_view_list.png" /> Students reports</a></li>
 		<li><a
-			href="listcourses.php?page=reportcourses&&user_role=adm&&action=search"><img
+			href="coursesreport.php?page=coursetxt"><img
 				src="icons/application_view_list.png" /> Courses reports </a></li>
 		<li><a
-			href="listmarks.php?page=markssearch&&user_role=adm&&action=search"><img
+			href="marksreport.php?page=markstxt"><img
 				src="icons/application_view_list.png" /> Marks Report</a></li>
 		<li><a
-			href="instructorspdf.php?"><img
-				src="icons/page_white_acrobat.png" /> All Instructors PDF</a></li>
-		<li><a
-			href="Studentspdf.php?"><img
+			href="studentsreportpdf.php?page=studenttxt"><img
 				src="icons/page_white_acrobat.png" /> All Students PDF</a></li>
 	
 	</ul></li>
+

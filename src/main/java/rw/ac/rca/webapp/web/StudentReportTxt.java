@@ -38,19 +38,13 @@ public class StudentReportTxt extends HttpServlet {
 
               try (OutputStream fos  = new FileOutputStream(file)){
                   for (Student student : students){
-                         String fullName = student.getFirstName() + student.getLastName();
-                         String phoneNumber = student.getPhoneNumber();
-                         String dob = student.getDateOfBirth().toString();
-                         boolean isInt = student.isInternational();
-                         boolean isPart = student.isPartTime();
-                         boolean isRepeat = student.isRepeating();
+                         String fullName = "Name: " +  student.getFirstName() + " " + student.getLastName() + " ;";
+                         String phoneNumber = "PhoneNumber: " +  student.getPhoneNumber() + " ;";
+                         String dob = "Date Of Birth : " +  student.getDateOfBirth().toString() + " ;";
 
                          fos.write(fullName.getBytes());
                          fos.write(phoneNumber.getBytes());
                          fos.write(dob.getBytes());
-                         fos.write(new byte[] { (byte) (isInt ? 1 : 0) });
-                         fos.write(new byte[] { (byte) (isPart ? 1 : 0) });
-                         fos.write(new byte[] { (byte) (isRepeat ? 1 : 0) });
 
                          fos.write(System.lineSeparator().getBytes());
                   }
